@@ -8,15 +8,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-
-" ColorTheme Moloaki
-Plugin 'tomasr/molokai'
-" ColorTheme Gruvbox
+" ColorTheme 
 Plugin 'morhetz/gruvbox'
+
 " AirLine
 Plugin 'bling/vim-airline'
+
 "NerdTree
 Plugin 'scrooloose/nerdtree'
+
 " Surround
 Plugin 'tpope/vim-surround'
 
@@ -28,10 +28,14 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax on
+set nu
+set relativenumber
 colorscheme gruvbox
 set background:dark
 set cursorline
-
+let g:gruvbox_termcolors=16
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 " Tab
 set tabstop=4
