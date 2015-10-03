@@ -15,15 +15,15 @@ colour_white="\x0D" #white
 
 
 # Icon glyphs from font xbmicons.pcf
-glyph_msc="\uE00E"
-glyph_cpu="\uE00F"
-glyph_mem="\uE010"
-glyph_dl="\uE011"
-glyph_ul="\uE012"
-glyph_com="\uE013"
-glyph_eml="\uE014"
-glyph_vol="\uE015"
-glyph_tim="\uE016"
+glyph_msc="\uE012"
+glyph_cpu="\uE006"
+glyph_mem="\uE008"
+glyph_dl="\uE009"
+glyph_ul="\uE00A"
+glyph_com="\uE00F"
+glyph_eml="\uE011"
+glyph_vol="\uE010"
+glyph_tim="\uE011"
 glyph_tor="\uE017"
 sep_solid="\uE01A"
 sep_line="\uE01B"
@@ -39,7 +39,7 @@ print_song_info() {
 
 print_mem_used() {
   mem_used="$(free -m | awk 'NR==2 {print $3}')"
-  echo -ne "${sep_bar} ${glyph_mem} ${colour_dgrey}${mem_used}M "
+  echo -ne "${sep_bar} ${colour_orange}${glyph_mem} ${colour_dgrey}${mem_used}M "
 }
 
 print_volume() {
@@ -54,8 +54,8 @@ print_datetime() {
 
 # network (from: http://dzen.geekmode.org/dwiki/doku.php?id=dzen:network-meter)
 # cpu (from: https://bbs.archlinux.org/viewtopic.php?pid=661641#p661641)
-rx_old=$(cat /sys/class/net/wlp2s0/statistics/rx_bytes)
-tx_old=$(cat /sys/class/net/wlp2s0/statistics/tx_bytes)
+rx_old=$(cat /sys/class/net/enp2s0/statistics/rx_bytes)
+tx_old=$(cat /sys/class/net/enp2s0/statistics/tx_bytes)
 
 while true; do
   # get new cpu idle and total usage
