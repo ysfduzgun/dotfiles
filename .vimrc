@@ -12,7 +12,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 
 " AirLine
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "NerdTree
 Plugin 'scrooloose/nerdtree'
