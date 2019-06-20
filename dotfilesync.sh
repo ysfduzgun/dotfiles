@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COPYPATH='~/git/dotfiles'
-Cp -vf ~/.bashrc "$COPYPATH/bashrc" 
+cp -vf ~/.bashrc "$COPYPATH/bashrc" 
 cp -vf ~/.dwmstart $COPYPATH/dwmstart 
 cp -vf ~/.vimrc $COPYPATH/vimrc 
 cp -vf ~/.Xdefaults $COPYPATH/Xdefaults 
