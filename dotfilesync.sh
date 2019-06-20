@@ -8,4 +8,4 @@ cp -vf ~/.xinitrc ~/git/dotfiles/xinitrc
 
 git add .
 git commit -m "update dotfiles"
-git push -u orign master
+git push -u origin master
