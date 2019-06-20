@@ -1,11 +1,10 @@
 #!/bin/bash
 
-COPYPATH='~/git/dotfiles'
-cp -vfp ~/.bashrc $COPYPATH/bashrc 
-cp -vf ~/.dwmstart $COPYPATH/dwmstart 
-cp -vf ~/.vimrc $COPYPATH/vimrc 
-cp -vf ~/.Xdefaults $COPYPATH/Xdefaults 
-cp -vf ~/.xinitrc $COPYPATH/xinitrc
+cp -vf ~/.bashrc ~/git/dotfiles/bashrc 
+cp -vf ~/.dwmstart ~/git/dotfiles/dwmstart 
+cp -vf ~/.vimrc ~/git/dotfiles/vimrc 
+cp -vf ~/.Xdefaults ~/git/dotfiles/Xdefaults 
+cp -vf ~/.xinitrc ~/git/dotfiles/xinitrc
 
 git add .
 git commit -m "update dotfiles"
