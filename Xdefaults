@@ -12,11 +12,15 @@ Xft.antialias: 1
 Xft.rgba: rgb
 !Xcursor.theme: pixelfun
 
+!--- disable beeep
+xset b off
+xset b 0 0 0
+
 !--- XTerm Settings
 xterm*locale: true
 xterm*saveLines: 1453
 xterm*faceName: Fira Code:size=12
-xterm*bellIsUrgent: true
+!xterm*bellIsUrgent: true
 xterm*selecToClipboard: true
 xterm*.translations: #override \
   Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
