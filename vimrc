@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 call plug#end()
 
@@ -27,8 +26,6 @@ set expandtab
 
 " Vim-airline
 set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
