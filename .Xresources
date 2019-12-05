@@ -15,7 +15,9 @@ Xft.rgba: rgb
 Xcursor.theme: pixelfun
 
 !--- Set dpi for laptop
-Xft.dpi: 96
+#ifdef SRVR_Lat
+Xft.dpi: 128
+#endif
 
 !--- XTerm Settings
 xterm*locale: true

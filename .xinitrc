@@ -8,7 +8,9 @@ xset b off
 xset b 0 0 0
 
 ## Set dpi
-xrandr --dpi 128
+if [ $HOSTNAME = "Lat" ]; then
+  xrandr --dpi 128
+fi
 
 ## Key repeat threshold and rate
 xset r rate 300 58
