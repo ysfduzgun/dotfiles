@@ -5,30 +5,27 @@
 !--- X Settings
 Xft.dpi: 96
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  slight
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: slight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-!Xcursor.theme: pixelfun
 
-!--- disable beeep
-xset b off
-xset b 0 0 0
+!--- Set Cursor Theme
+Xcursor.theme: pixelfun
+
+!--- Set dpi for laptop
+Xft.dpi: 96
 
 !--- XTerm Settings
 xterm*locale: true
 xterm*saveLines: 1453
-xterm*faceName: Fira Code:size=12
+xterm*faceName: Ubuntu Mono Code:size=12
 !xterm*bellIsUrgent: true
 xterm*selecToClipboard: true
 xterm*.translations: #override \
   Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
   Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
-
-
-
-
 
 !--- Colors
 *foreground: #DDCCBB

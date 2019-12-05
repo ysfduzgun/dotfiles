@@ -1,4 +1,0 @@
-#!/bin/bash
-#~.dwmstart
-
-dwm > $HOME/.dwm.log

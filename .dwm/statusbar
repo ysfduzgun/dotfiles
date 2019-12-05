@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#Glyph Icons
+gly_time="\uE016"
+gly_pipe="\uE020"
+gly_larrow="\uE01B"
+gly_vol="\uE015"
+gly_mem="\uE029"
+gly_bat="\uE02E"
+gly_net="\uE013"
+
+
+print_date() {
+  datetime="$(date "+%a %d %b - %H:%M")"
+  echo -ne "${gly_time} ${datetime}"
+}
+
+print_vol() {
+  volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+  echo -ne "${gly_vol} ${volume}% "
+}
+
+print_mem() {
+  mem_used="$(free -m | awk 'NR==2 {print $3}')"
+  echo -ne "${gly_mem} ${mem_used}M"
+}
+
+print_bat() {
+  bat_status="$(cat /sys/class/power_supply/BAT0/capacity)%"
+  volt_now="$(cat /sys/class/power_supply/BAT0/voltage_now)"
+  curr_now="$(cat /sys/class/power_supply/BAT0/current_now)"
+  i=$(echo "scale=3; $volt_now"/1000000 | bc)
+  v=$(echo "scale=3; $curr_now"/1000000 | bc)
+  watt=$(echo "scale=1; $v * $i" | bc)
+  watt_trim=${watt%.*}
+  echo -ne "${gly_bat} ${bat_status} ${watt_trim}w"
+}
+
+print_ip() {
+  ip_addr="$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v 0.0)"
+  echo -ne "${gly_net} ${ip_addr}"
+}
+
+while true; do
+  xsetroot -name " $(print_ip) $(print_bat) $(print_mem) $(print_vol)$(print_date)"
+  sleep 2
+done
