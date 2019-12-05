@@ -12,7 +12,7 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !--- Set Cursor Theme
-Xcursor.theme: pixelfun
+Xcursor.theme: pixelfun3
 
 !--- Set dpi for laptop
 #ifdef SRVR_Lat
