@@ -22,7 +22,7 @@ Xft.dpi: 128
 !--- XTerm Settings
 xterm*locale: true
 xterm*saveLines: 1453
-xterm*faceName: Ubuntu Mono Code:size=12
+xterm*faceName: Ubuntu Mono:size=14
 !xterm*bellIsUrgent: true
 xterm*selecToClipboard: true
 xterm*.translations: #override \

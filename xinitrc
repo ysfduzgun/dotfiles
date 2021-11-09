@@ -1,5 +1,8 @@
 #!/bin/sh
 
+## Keyboard Layout
+setxkbmap tr
+
 ## Load .Xresorces
 xrdb -merge $HOME/.Xresources
 
@@ -19,5 +22,4 @@ xset r rate 300 58
 xss-lock -- slock &
 
 ## Start WM
-exec $HOME/.dwm/start
-#exec dwm
+exec $HOME/git/dwm/dwm
