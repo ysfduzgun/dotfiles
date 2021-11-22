@@ -1,10 +1,10 @@
 #!/bin/sh
 
-## Keyboard Layout
-setxkbmap tr
-
 ## Load .Xresorces
 xrdb -merge $HOME/.Xresources
+
+## Wallpaper
+feh --bg-scale $HOME/.bg.png
 
 ## Disable beep
 xset b off
@@ -19,7 +19,9 @@ fi
 xset r rate 300 58
 
 ## Enable auto lock
-xss-lock -- slock &
+#xss-lock -- slock &
 
 ## Start WM
+dunst &
+$HOME/git/ssdwm/ssdwm 2>&1 >/dev/null &
 exec $HOME/git/dwm/dwm
