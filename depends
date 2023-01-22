@@ -1,0 +1,35 @@
+libx11
+libxinerama
+libxft
+freetype2
+xorg-xsetroot
+light
+upower
+pacman-contrib (checkupdates)
+pulsemixer
+which
+
+picom
+hsetroot
+dunst
+feh
+vim
+iwd
+xf86-video-intel
+xorg-xinit
+xf86-input-synaptics (if pc have touchpad)
+xorg-xinput
+
+# colorpick
+xcolor
+imagemagick
+
+# screenshot
+maim
+xclip
+viewnior
+xdotool
+
+# sound
+sof-firmware
+pulsemixer

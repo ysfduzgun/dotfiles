@@ -1,0 +1,33 @@
+# DWM
+ALT p           dmenu
+ALT Enter       st
+ALT 1,2...9     tags
+ALT t           tiling mode
+ALT f           floating mode
+ALT m           monockle mode
+
+# Color Picker
+Alt c             Color Pick
+
+# LockScreen
+Super l           Lock Screen
+Ctrl Alt l        Lock Screen
+
+# Screenshot
+PrtSc             shot now
+Super PrtSc       shot in 3
+Shift PrtSc       shot in 5
+Ctrl PrtSc        shot wind
+Alt PrtSc         shot area
+
+# Power Modes
+# https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)#Performance_modes
+FN l          Lowpower Mode
+FN m          Balanced Mode
+FN h          Performance Mode
+
+# Vim
+Ctrl n          Nerd Tree
+Ctrl W - h,l    Switch splits 
+Ctrl W - T      Tab
+g - t,T         Next,Prev Tab
