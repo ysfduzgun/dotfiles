@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono Nerd Font:pixelsize=22:antialias=true:autohint=true";
+static char *font = "JetBrains Mono Nerd Font:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 12;
 
 /*
@@ -106,7 +106,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 1;
 
 ///* Terminal colors (16 first used in escape sequence) */
 //static const char *colorname[] = {
@@ -159,23 +159,28 @@ static const char *colorname[] = {
 	"#62AEEF", /* blue    */
 	"#C778DD", /* magenta */
 	"#55B6C2", /* cyan    */
-	"#ABB2BF", /* white   */
+	//"#ABB2BF", /* white   */
+	"#e5dbb2", /* white   */
 
 	/* 8 bright colors */
 	"#50545B", /* black   */
 	"#EA757E", /* red     */
 	"#A2CD83", /* green   */
 	"#EFCA84", /* yellow  */
-	"#6CB8F9", /* blue    */
+	//"#6CB8F9", /* blue    */
+	"#b8bb26", /* blue    */
 	"#D282E7", /* magenta */
 	"#5FC0CC", /* cyan    */
-	"#B5BCC9", /* white   */
+	//"#B5BCC9", /* white   */
+	"#e5dbb2", /* white   */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#1E2128", /* background */
-	"#ABB2BF", /* foreground */
+	//"#1E2128", /* background */
+	"#282828", /* background */
+	//"#ABB2BF", /* foreground */
+	"#e5dbb2", /* foreground */
 };
 
 

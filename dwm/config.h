@@ -9,23 +9,23 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=16" };
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=18" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=18";
-static const char col_gray1[]       = "#2E3440";
-static const char col_gray2[]       = "#3B4252";
-static const char col_gray3[]       = "#434C5E"; 
-static const char col_gray4[]       = "#4C566A";
-static const char col_cyan[]        = "#88C0D0"; 
-static const char col_white[]       = "#D8DEE9"; 
-static const char col_green[]       = "#8FBCBB"; 
+static const char col_gray1[]       = "#1d2021";
+static const char col_gray2[]       = "#282828";
+static const char col_gray3[]       = "#3c3836"; 
+static const char col_gray4[]       = "#504945";
+static const char col_cyan[]        = "#83a589"; 
+static const char col_white[]       = "#d5c4a1"; 
+static const char col_yellow[]       = "#fabd2f"; 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_cyan, col_gray1, col_gray4 },
-    [SchemeTitle] = { col_cyan, col_gray1, col_gray4  },
-	[SchemeSel]  = { col_green, col_gray4,  col_gray1  },
+	[SchemeNorm] = { col_white, col_gray3, col_gray4 },
+    [SchemeTitle] = { col_white, col_gray3, col_gray4  },
+	[SchemeSel]  = { col_yellow, col_gray2,  col_gray1  },
 };
 
 /* tagging */
@@ -73,7 +73,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray3, "-nf", col_yellow, "-sb", col_white, "-sf", col_gray4, NULL };
 
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
