@@ -8,9 +8,13 @@ interval=0
 ## Cpu Info
 cpu_info() {
 	cpu_load=$(grep -o "^[^ ]*" /proc/loadavg)
+	cpu_temp=$(cat /sys/class/thermal/thermal_zone*/temp | awk '{ total += $0; count++ } END { print total/count }' | head -c2)
 
 	printf ""
-	printf " $cpu_load"
+	printf " $cpu_load "
+
+    printf ""
+    printf " $cpu_temp"
 }
 
 ## Memory
@@ -66,6 +70,11 @@ battery() {
 			printf " $BAT%%"
 		fi
 	fi
+}
+
+bat_remain() {
+    REMAIN=$(acpi | cut -d" " -f5 | cut -c2-5)
+    printf "$REMAIN"
 }
 
 ## Brightness
