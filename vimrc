@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Color
@@ -13,12 +13,10 @@ syntax on
 set t_Co=256
 set cursorline
 set termguicolors
-let g:gruvbox_contrast_dark = 'medium'
-set bg=dark
-colorscheme gruvbox
+colorscheme nord
 " lightline
 set laststatus=2
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = { 'colorscheme': 'nord' }
 
 filetype plugin indent on
 set nu
@@ -27,6 +25,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set cursorline
+set paste
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
