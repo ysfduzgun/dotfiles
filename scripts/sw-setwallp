@@ -1,0 +1,16 @@
+#!/bin/bash
+
+WALLP="$HOME/.config/wallp"
+PIC=$1
+FULLPATH_PIC=`realpath $PIC`
+
+if [ -f "$WALLP" ]; then
+	UNLINK="unlink $WALLP"
+	$UNLINK
+fi
+
+LINK="ln -s $FULLPATH_PIC $WALLP"
+$LINK
+
+swaymsg reload
+

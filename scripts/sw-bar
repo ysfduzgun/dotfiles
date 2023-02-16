@@ -1,0 +1,107 @@
+#!/usr/bin/bash
+#
+# Forked from https://github.com/siduck/chadwm
+#
+
+interval=0
+
+## Cpu Info
+cpu_info() {
+	cpu_load=$(grep -o "^[^ ]*" /proc/loadavg)
+	cpu_temp=$(cat /sys/class/thermal/thermal_zone*/temp | awk '{ total += $0; count++ } END { print total/count }' | head -c2)
+
+	printf ""
+	printf " $cpu_load "
+
+    printf ""
+    printf " $cpu_temp"
+}
+
+## Memory
+memory() {
+	printf " $(free -h | awk '/^Mem/{print $3}' | sed s/i//g)"
+}
+
+## Wi-fi
+wlan() {
+	case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+		up) printf " ` nmcli connection show --active | grep wifi | cut -d" " -f1`";;
+		down) printf "睊";;
+	esac
+}
+
+## Time
+clock() {
+	printf ""
+	printf " $(date '+%Y/%m/%d %a %H:%M')"
+}
+
+## Battery Info
+battery() {
+	BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
+	AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
+
+	if [[ "$AC" == "charging" ]]; then
+		printf " $BAT%%"
+	elif [[ "$AC" == "fully-charged" ]]; then
+		printf " Full"
+	else
+		if [[ ("$BAT" -ge "0") && ("$BAT" -le "20") ]]; then
+			printf " $BAT%%"
+		elif [[ ("$BAT" -ge "20") && ("$BAT" -le "40") ]]; then
+			printf " $BAT%%"
+		elif [[ ("$BAT" -ge "40") && ("$BAT" -le "60") ]]; then
+			printf " $BAT%%"
+		elif [[ ("$BAT" -ge "60") && ("$BAT" -le "80") ]]; then
+			printf " $BAT%%"
+		elif [[ ("$BAT" -ge "80") && ("$BAT" -le "100") ]]; then
+			printf " $BAT%%"
+		fi
+	fi
+}
+
+bat_remain() {
+    REMAIN=$(acpi | cut -d" " -f5 | cut -c2-5)
+    printf "$REMAIN"
+}
+
+## Brightness
+brightness() {
+	LIGHT=$(printf "%.0f\n" `light -G`)
+
+	if [[ ("$LIGHT" -ge "0") && ("$LIGHT" -le "25") ]]; then
+		printf " $LIGHT%%"
+	elif [[ ("$LIGHT" -ge "25") && ("$LIGHT" -le "50") ]]; then
+		printf " $LIGHT%%"
+	elif [[ ("$LIGHT" -ge "50") && ("$LIGHT" -le "75") ]]; then
+		printf " $LIGHT%%"
+	elif [[ ("$LIGHT" -ge "75") && ("$LIGHT" -le "100") ]]; then
+		printf " $LIGHT%%"
+	fi
+}
+
+## Volume
+volume() {
+    VOL="`pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | cut -d"/" -f2 | xargs`"
+    if [[ $VOL == 0* ]]; then
+        printf "ﱝ"
+    else
+        printf " $VOL"
+    fi
+}
+
+## POWERMODE
+powermode() {
+	case "$(cat /sys/firmware/acpi/platform_profile 2>/dev/null)" in
+		balanced) printf " BAL";;
+		low-power) printf " LP";;
+		performance) printf " PER";;
+	esac
+}
+
+## Main
+echo "$(wlan) $(battery) $(powermode) $(cpu_info) $(memory) $(brightness) $(volume) $(clock) "
+
+#while true; do
+#  sleep 1 && echo "$(battery) $(powermode) $(brightness) $(cpu_info) $(memory) $(wlan) $(clock) "
+#done

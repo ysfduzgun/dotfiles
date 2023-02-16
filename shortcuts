@@ -1,24 +1,17 @@
-# DWM
-ALT p           dmenu
-ALT Enter       st
-ALT 1,2...9     tags
-ALT t           tiling mode
-ALT f           floating mode
-ALT m           monockle mode
+# Sway
+MOD Enter		Terminal
+MOD r			Resize
+MOD f			FullScreen
+MOD w			Tabbed Mode
+MOD s			Stacking Mode
+MOD e			Toggle Split Mode
+MOD b			Split Hor
+MOD v			Split Ver
+MOD Shift c 	Reload Sway
+MOD Shift q 	Close Window
+MOD Shift e 	Exit Sway
+MOD Alt l	 	Lock Screen
 
-# Color Picker
-Alt c             Color Pick
-
-# LockScreen
-Super l           Lock Screen
-Ctrl Alt l        Lock Screen
-
-# Screenshot
-PrtSc             shot now
-Super PrtSc       shot in 3
-Shift PrtSc       shot in 5
-Ctrl PrtSc        shot wind
-Alt PrtSc         shot area
 
 # Power Modes
 # https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_9)#Performance_modes
