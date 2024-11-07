@@ -1,0 +1,21 @@
+#!/bin/bash
+
+### Yusuf Düzgün
+# https://github.com/ysfduzgun/dotfiles/.local/bin/tpled
+# for turn off my thinkpad laptop leds
+
+if [ "$1" == "on" ]; then
+    val=1
+elif [ "$1" == "off" ]; then
+    val=0
+else
+    echo "Please use 'on' or 'off' parameter"
+    exit 1
+fi
+
+echo $val | sudo tee /sys/class/leds/tpacpi::power/brightness &>/dev/null
+echo $val | sudo tee /sys/class/leds/platform\:\:micmute/brightness &>/dev/null
+echo $val | sudo tee /sys/class/leds/platform\:\:mute/brightness &>/dev/null
+echo $val | sudo tee /sys/class/leds/tpacpi\:\:lid_logo_dot/brightness &>/dev/null
+
+echo "Ok!"
